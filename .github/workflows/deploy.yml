@@ -1,0 +1,32 @@
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  restart-inference:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Restart inference via E2E API
+        env:
+          API_KEY: ${{ secrets.E2E_API_KEY }}
+          AUTH_TOKEN: ${{ secrets.E2E_AUTH_TOKEN }}
+        run: |
+          echo "Restarting inference after merge..."
+
+          URL="https://api.e2enetworks.com/myaccount/api/v1/gpu/github-inferences/restart/"\
+          "?apikey=${API_KEY}"
+
+          curl --fail --show-error -X POST "$URL" \
+            -H "Authorization: Bearer ${AUTH_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "inference_uuids": [
+                "uuid-1",
+                "uuid-2",
+                "uuid-3"
+              ]
+            }'
