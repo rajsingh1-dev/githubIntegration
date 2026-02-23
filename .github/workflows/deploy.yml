@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Restart inference via E2E API
         env:
-          API_KEY: ${{ secrets.E2E_API_KEY }}
-          AUTH_TOKEN: ${{ secrets.E2E_AUTH_TOKEN }}
+          API_KEY: ${{ secrets.API_KEY }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: |
           echo "Restarting inference after merge..."
 
