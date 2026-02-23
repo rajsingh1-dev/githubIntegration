@@ -25,8 +25,7 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{
               "inference_uuids": [
-                "uuid-1",
-                "uuid-2",
-                "uuid-3"
+                "96e99177-59a7-4bdf-8e8f-eef3df48bcbb",
+                "4d12063a-c5e7-4776-998b-5fcd96797d4f"
               ]
             }'
