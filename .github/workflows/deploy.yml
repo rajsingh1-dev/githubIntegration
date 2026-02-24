@@ -26,6 +26,6 @@ jobs:
             -d '{
               "inference_uuids": [
                 "b137de60-5a20-4282-bab3-be556eb0a9c7",
-                "76c51dc3-f3ec-448b-943c-7396c4fcc553i"
+                "76c51dc3-f3ec-448b-943c-7396c4fcc553"
               ]
             }'
