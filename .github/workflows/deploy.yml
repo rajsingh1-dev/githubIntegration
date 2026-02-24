@@ -20,12 +20,12 @@ jobs:
           URL="https://api.e2enetworks.com/myaccount/api/v1/gpu/github-inferences/restart/"\
           "?apikey=${API_KEY}"
 
-          curl --fail --show-error -X POST "$URL" \
+          curl --fail --show-error -X PUT "$URL" \
             -H "Authorization: Bearer ${AUTH_TOKEN}" \
             -H "Content-Type: application/json" \
             -d '{
               "inference_uuids": [
-                "96e99177-59a7-4bdf-8e8f-eef3df48bcbb",
-                "4d12063a-c5e7-4776-998b-5fcd96797d4f"
+                "b137de60-5a20-4282-bab3-be556eb0a9c7",
+                "76c51dc3-f3ec-448b-943c-7396c4fcc553i"
               ]
             }'
