@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/health", methods=["GET"])
 def health():
-    return {"status": "Branched Changed Successfully After Merge"}
+    return {"status": "Branch Changed Successfully!!!"}
 
 @app.route("/infer", methods=["POST"])
 def infer():
